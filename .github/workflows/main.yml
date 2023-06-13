@@ -25,7 +25,7 @@ jobs:
         run: vendor/bin/phpunit
 
       - name: Build CodeIgniter project
-        run: php index.php build
+        run: php welcome_message.php build
 
       - name: Deploy to server
         uses: easingthemes/ssh-deploy@v2
