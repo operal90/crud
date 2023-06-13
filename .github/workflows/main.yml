@@ -24,8 +24,11 @@ jobs:
       - name: Run Tests
         run: vendor/bin/phpunit
 
+      - name: Modify vfsStream.php
+        run: /bin/sed -i 's/name{0}/name[0]/' vendor/mikey179/vfsstream/src/main/php/org/bovigo/vfs/vfsStream.php
+
       - name: Build CodeIgniter project
-        run: php welcome_message.php build
+        run: php index.php build
 
       - name: Deploy to server
         uses: easingthemes/ssh-deploy@v2
